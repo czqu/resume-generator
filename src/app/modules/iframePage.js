@@ -18,7 +18,7 @@ function registerIframePageLoad() {
     clickObjEditor.set({})
 
     // 获取点击到的内容
-    e.path[0].contentDocument.body.addEventListener('click', (e) => {
+    e.composedPath()[0].contentDocument.body.addEventListener('click', (e) => {
       const $target = e.target
       const clickText = $target.textContent.trim()
       const matchDoms = traverseDomTreeMatchStr(
